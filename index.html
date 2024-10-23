@@ -14,8 +14,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="container" style="height: 50vh;">
-            <canvas id="myChart"></canvas>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col"><canvas id="myChart"></canvas></div>
+                <div class="col"><a href="pages/stratcomms.html"><canvas id="myChart2"></canvas></a></div>
+                <div class="col"><canvas id="myChart3"></canvas></div>
+            </div>
+            
         </div>
         
 
@@ -29,6 +34,79 @@
 
             let thisChart = new Chart(myChart, {
                 type: 'bar',
+                data:{
+                    labels: ['This', 'That', 'Another', 'Also'],
+                    datasets: [{
+                        label: 'UX Group',
+                        data: [
+                            564,
+                            448,
+                            227,
+                            652
+                        ],
+                        backgroundColor: [
+                            'rgba(8, 103, 136, 1)',
+                            'rgba(7, 160, 195, 1)',
+                            'rgba(240, 200, 8, 1)',
+                            'rgba(221, 28, 26, 1)', 
+                            'rgba(255, 241, 208, 1)'
+                        ],
+                        borderWidth: 6,
+                        borderColor: '777'
+                    }]
+                },
+                options:{
+                    indexAxis: 'y',
+                    scales: {
+                        y: {
+                            ticks: {
+                                crossAlign: 'far',
+                            }
+                        }
+                    }
+                }
+            });
+
+            let myChart2 = document.getElementById("myChart2").getContext('2d');
+
+            let thisOtherChart = new Chart(myChart2, {
+                type: 'line',
+                data:{
+                    labels: ['This', 'That', 'Another', 'Also'],
+                    datasets: [{
+                        label: 'Strategic Communications',
+                        data: [
+                            564,
+                            448,
+                            227,
+                            652
+                        ],
+                        backgroundColor: [
+                            'rgba(8, 103, 136, 1)',
+                            'rgba(7, 160, 195, 1)',
+                            'rgba(240, 200, 8, 1)',
+                            'rgba(221, 28, 26, 1)', 
+                            'rgba(255, 241, 208, 1)'
+                        ],
+                        borderWidth: 6,
+                        borderColor: '777'
+                    }]
+                },
+                options:{
+                    indexAxis: 'y',
+                    scales: {
+                        y: {
+                            ticks: {
+                                crossAlign: 'far',
+                            }
+                        }
+                    }
+                }
+            });
+            let myChart3 = document.getElementById("myChart3").getContext('2d');
+
+            let thisLastChart = new Chart(myChart3, {
+                type: 'doughnut',
                 data:{
                     labels: ['This', 'That', 'Another', 'Also'],
                     datasets: [{
