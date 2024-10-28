@@ -30,33 +30,33 @@
             let thisChart = new Chart(myChart, {
                 type: 'bar',
                 data:{
-                    labels: ['This', 'That', 'Another', 'Also'],
-                    datasets: [{
-                        label: 'Population',
-                        data: [
-                            25546,
-                            4484,
-                            22697,
-                            6502
-                        ],
-                        backgroundColor: [
-                            'rgba(8, 103, 136, 1)',
-                            'rgba(7, 160, 195, 1)',
-                            'rgba(240, 200, 8, 1)',
-                            'rgba(221, 28, 26, 1)', 
-                            'rgba(255, 241, 208, 1)'
-                        ],
-                        borderWidth: 6,
-                        borderColor: '777'
-                    }]
+                    labels: ['Q1: Overall, how well does the site meet your needs', 'Q3: How easy is it to find', 'Q4: How easy is it to understand', 'Q5: How much do you trust the info.', 'Q6: Did it take you more or less time'],
+                    datasets: [
+                        {
+                            label: 'Positive',
+                            data: [40.98, 38.98, 38.98, 63.16, 24.14],
+                            backgroundColor: '#fab32f'
+                        },
+                        {
+                            label: 'Neutral',
+                            data: [14.75, 15.25, 37.29, 17.54, 25.86],
+                            backgroundColor: '#398434'
+                        },
+                        {
+                            label: 'Negative',
+                            data: [44.26,45.76,23.72,19.30,50],
+                            backgroundColor: '#1c2674'
+                        }
+                    ]
                 },
                 options:{
                     indexAxis: 'y',
                     scales: {
+                        x: {
+                            stacked: true,
+                        },
                         y: {
-                            ticks: {
-                                crossAlign: 'far',
-                            }
+                            stacked: true
                         }
                     }
                 }
